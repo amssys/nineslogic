@@ -21,9 +21,9 @@ public class NinesLogicTest {
 		NinesLogic logic = new NinesLogic();
 		NinesResponse res = logic.createDivine(req);
 		assertEquals("1", res.getYearStar());
-		assertEquals("4", res.getYearStar());
-		assertEquals("7", res.getYearStar());
-		assertEquals("9", res.getYearStar());
+		assertEquals("4", res.getMonthStar());
+		assertEquals("7", res.getDateStar());
+		assertEquals("9", res.getTimeStar());
 	}
 
 }
