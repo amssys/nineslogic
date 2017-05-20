@@ -8,6 +8,10 @@ import nines.logic.NinesLogic;
 import nines.logic.NinesRequest;
 import nines.logic.NinesResponse;
 
+/**
+ * ロジックのテストを行うクラス<BR>
+ * @author Luv
+ */
 public class NinesLogicTest {
 
 	@Test
