@@ -10,7 +10,7 @@ import nines.logic.NinesResponse;
 
 /**
  * ロジックのテストを行うクラス<BR>
- * @author Luv
+ * @author Luv<BR>
  */
 public class NinesLogicTest {
 
