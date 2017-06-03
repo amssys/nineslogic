@@ -2,25 +2,18 @@ package nines.logic.main;
 
 import nines.logic.util.Constant;
 
-public abstract class AbstractCommonNineStarKi {
+/**
+ * 九星の抽象クラス<BR>
+ */
+public abstract class AbstractCommonNineStar {
 
-	/**
-	 * 九星の名称をセットします。<BR>
-	 * @param res
-	 * @param star
-	 */
-	protected void setNineStarName(NinesResponse res, Integer star) {
-		// 年家九星の名称をセット
-		res.setYearStar(getStarName(star));
-
-	}
 
 	/**
 	 * 星の名称を取得します。<BR>
 	 * @param star
 	 * @return
 	 */
-	private String getStarName(Integer star) {
+	protected String getStarName(Integer star) {
 		switch (star) {
 		case Constant.NUM_IPPAKU_SUISEI:
 			return Constant.NAME_IPPAKU_SUISEI;

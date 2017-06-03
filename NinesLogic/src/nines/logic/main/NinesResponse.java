@@ -6,16 +6,29 @@ package nines.logic.main;
  */
 public class NinesResponse {
 
-	/** 年の九星 */
+	/** 年の九星：数値 */
 	private String yearStar;
-	/** 月の九星 */
+	/** 月の九星：数値 */
 	private String monthStar;
-	/** 日の九星 */
+	/** 日の九星：数値 */
 	private String dateStar;
-	/** 時の九星 */
+	/** 時の九星：数値 */
 	private String timeStar;
-	/** 誕生年の九星 */
+	/** 誕生年の九星：数値 */
 	private String birthYearStar;
+
+	/** 年の九星：名称 */
+	private String yearStarName;
+	/** 月の九星：名称 */
+	private String monthStarName;
+	/** 日の九星：名称 */
+	private String dateStarName;
+	/** 時の九星：名称 */
+	private String timeStarName;
+	/** 誕生年の九星：名称 */
+	private String birthYearStarName;
+
+
 
 	/**
 	 * dateStarを取得します。<BR>
@@ -96,5 +109,86 @@ public class NinesResponse {
 	public void setMonthStar(String monthStar) {
 		this.monthStar = monthStar;
 	}
+
+	/**
+	 * yearStarNameを取得します。<BR>
+	 * @return yearStarName
+	 */
+	public String getYearStarName() {
+		return yearStarName;
+	}
+
+	/**
+	 * yearStarNameを設定します。<BR>
+	 * @param yearStarName
+	 */
+	public void setYearStarName(String yearStarName) {
+		this.yearStarName = yearStarName;
+	}
+
+	/**
+	 * monthStarNameを取得します。<BR>
+	 * @return monthStarName
+	 */
+	public String getMonthStarName() {
+		return monthStarName;
+	}
+
+	/**
+	 * monthStarNameを設定します。<BR>
+	 * @param monthStarName
+	 */
+	public void setMonthStarName(String monthStarName) {
+		this.monthStarName = monthStarName;
+	}
+
+	/**
+	 * dateStarNameを取得します。<BR>
+	 * @return dateStarName
+	 */
+	public String getDateStarName() {
+		return dateStarName;
+	}
+
+	/**
+	 * dateStarNameを設定します。<BR>
+	 * @param dateStarName
+	 */
+	public void setDateStarName(String dateStarName) {
+		this.dateStarName = dateStarName;
+	}
+
+	/**
+	 * timeStarNameを取得します。<BR>
+	 * @return timeStarName
+	 */
+	public String getTimeStarName() {
+		return timeStarName;
+	}
+
+	/**
+	 * timeStarNameを設定します。<BR>
+	 * @param timeStarName
+	 */
+	public void setTimeStarName(String timeStarName) {
+		this.timeStarName = timeStarName;
+	}
+
+	/**
+	 * birthYearStarNameを取得します。<BR>
+	 * @return birthYearStarName
+	 */
+	public String getBirthYearStarName() {
+		return birthYearStarName;
+	}
+
+	/**
+	 * birthYearStarNameを設定します。<BR>
+	 * @param birthYearStarName
+	 */
+	public void setBirthYearStarName(String birthYearStarName) {
+		this.birthYearStarName = birthYearStarName;
+	}
+
 
 }

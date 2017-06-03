@@ -122,22 +122,26 @@ public class Constant {
 	 */
 	public class MonthStarGr2 {
 
-		private EnumMap<Month, String> monthStarGr2;
+		private EnumMap<Month, Integer> monthStarGr2;
 
 		public MonthStarGr2() {
-			monthStarGr2 = new EnumMap<Month, String>(Month.class);
-			monthStarGr2.put(Month.JANUARY, NAME_SAMPEKI_MOKUSEI);
-			monthStarGr2.put(Month.FEBRUARY, NAME_GOU_DOSEI);
-			monthStarGr2.put(Month.MARCH, NAME_SHIROKU_MOKUSEI);
-			monthStarGr2.put(Month.APRIL, NAME_SAMPEKI_MOKUSEI);
-			monthStarGr2.put(Month.MAY, NAME_JIKOKU_DOSEI);
-			monthStarGr2.put(Month.JUNE, NAME_IPPAKU_SUISEI);
-			monthStarGr2.put(Month.JULY, NAME_KYUSHI_KASEI);
-			monthStarGr2.put(Month.AUGUST, NAME_HAPPAKU_DOSEI);
-			monthStarGr2.put(Month.SEPTEMBER, NAME_SHICHISEKI_KINSEI);
-			monthStarGr2.put(Month.OCTOBER, NAME_ROPPAKU_KINSEI);
-			monthStarGr2.put(Month.NOVEMBER, NAME_GOU_DOSEI);
-			monthStarGr2.put(Month.DECEMBER, NAME_SHIROKU_MOKUSEI);
+			monthStarGr2 = new EnumMap<Month, Integer>(Month.class);
+			monthStarGr2.put(Month.JANUARY, NUM_ROPPAKU_KINSEI);
+			monthStarGr2.put(Month.FEBRUARY, NUM_HAPPAKU_DOSEI);
+			monthStarGr2.put(Month.MARCH, NUM_SHICHISEKI_KINSEI);
+			monthStarGr2.put(Month.APRIL, NUM_ROPPAKU_KINSEI);
+			monthStarGr2.put(Month.MAY, NUM_GOU_DOSEI);
+			monthStarGr2.put(Month.JUNE, NUM_SHIROKU_MOKUSEI);
+			monthStarGr2.put(Month.JULY, NUM_SAMPEKI_MOKUSEI);
+			monthStarGr2.put(Month.AUGUST, NUM_JIKOKU_DOSEI);
+			monthStarGr2.put(Month.SEPTEMBER, NUM_IPPAKU_SUISEI);
+			monthStarGr2.put(Month.OCTOBER, NUM_KYUSHI_KASEI);
+			monthStarGr2.put(Month.NOVEMBER, NUM_HAPPAKU_DOSEI);
+			monthStarGr2.put(Month.DECEMBER, NUM_SHICHISEKI_KINSEI);
+		}
+
+		public Integer get(Month month) {
+			return this.monthStarGr2.get(month);
 		}
 	}
 
@@ -149,22 +153,27 @@ public class Constant {
 	 */
 	public class MonthStarGr3 {
 
-		private EnumMap<Month, String> monthStarGr3;
+		private EnumMap<Month, Integer> monthStarGr3;
 
 		public MonthStarGr3() {
-			monthStarGr3 = new EnumMap<Month, String>(Month.class);
-			monthStarGr3.put(Month.JANUARY, NAME_KYUSHI_KASEI);
-			monthStarGr3.put(Month.FEBRUARY, NAME_JIKOKU_DOSEI);
-			monthStarGr3.put(Month.MARCH, NAME_IPPAKU_SUISEI);
-			monthStarGr3.put(Month.APRIL, NAME_KYUSHI_KASEI);
-			monthStarGr3.put(Month.MAY, NAME_HAPPAKU_DOSEI);
-			monthStarGr3.put(Month.JUNE, NAME_SHICHISEKI_KINSEI);
-			monthStarGr3.put(Month.JULY, NAME_ROPPAKU_KINSEI);
-			monthStarGr3.put(Month.AUGUST, NAME_GOU_DOSEI);
-			monthStarGr3.put(Month.SEPTEMBER, NAME_SHIROKU_MOKUSEI);
-			monthStarGr3.put(Month.OCTOBER, NAME_SAMPEKI_MOKUSEI);
-			monthStarGr3.put(Month.NOVEMBER, NAME_JIKOKU_DOSEI);
-			monthStarGr3.put(Month.DECEMBER, NAME_IPPAKU_SUISEI);
+			monthStarGr3 = new EnumMap<Month, Integer>(Month.class);
+			monthStarGr3.put(Month.JANUARY, NUM_ROPPAKU_KINSEI);
+			monthStarGr3.put(Month.FEBRUARY, NUM_HAPPAKU_DOSEI);
+			monthStarGr3.put(Month.MARCH, NUM_SHICHISEKI_KINSEI);
+			monthStarGr3.put(Month.APRIL, NUM_ROPPAKU_KINSEI);
+			monthStarGr3.put(Month.MAY, NUM_GOU_DOSEI);
+			monthStarGr3.put(Month.JUNE, NUM_SHIROKU_MOKUSEI);
+			monthStarGr3.put(Month.JULY, NUM_SAMPEKI_MOKUSEI);
+			monthStarGr3.put(Month.AUGUST, NUM_JIKOKU_DOSEI);
+			monthStarGr3.put(Month.SEPTEMBER, NUM_IPPAKU_SUISEI);
+			monthStarGr3.put(Month.OCTOBER, NUM_KYUSHI_KASEI);
+			monthStarGr3.put(Month.NOVEMBER, NUM_HAPPAKU_DOSEI);
+			monthStarGr3.put(Month.DECEMBER, NUM_SHICHISEKI_KINSEI);
+		}
+
+
+		public Integer get(Month month) {
+			return this.monthStarGr3.get(month);
 		}
 	}
 
