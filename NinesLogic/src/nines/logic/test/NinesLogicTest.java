@@ -18,7 +18,8 @@ public class NinesLogicTest {
 	@Test
 	public void testNinesLogic1() {
 		NinesRequest req = new NinesRequest();
-		req.setYmdhms("2000/06/09 18:30:00");
+		req.setBirthYear("1988/03/22");
+		req.setYmdhms("2017/06/03 04:00 PM");
 		NinesLogic logic = new NinesLogic();
 		NinesResponse res = logic.createDivine(req);
 		assertEquals(Constant.NAME_IPPAKU_SUISEI, res.getYearStar());

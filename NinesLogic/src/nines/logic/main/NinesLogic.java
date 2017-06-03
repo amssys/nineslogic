@@ -3,6 +3,8 @@ package nines.logic.main;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
+
 import nines.logic.util.Constant;
 
 /**
@@ -11,6 +13,14 @@ import nines.logic.util.Constant;
  */
 public class NinesLogic extends AbstractCommonNineStar {
 
+	private LambdaLogger logger;
+	/**
+	 * コンストラクタ<BR>
+	 * @param logger
+	 */
+	public NinesLogic(LambdaLogger logger) {
+		this.logger = logger;
+	}
 	public NinesResponse createDivine(NinesRequest req) {
 
 		final String ymdhms = req.getYmdhms();
@@ -42,11 +52,22 @@ public class NinesLogic extends AbstractCommonNineStar {
 		map.put(Integer.valueOf(res.getYearStar()), Integer.valueOf(res.getYearStar()));
 
 		// 日家九星を取得
-		CalculateDateNineStar clacStar = new CalculateDateNineStar();
-		map = clacStar.getDateStar(map, ymdhms);
-
-		Integer dateStar = Integer.valueOf(map.get(Integer.valueOf(year+monthT+dateT)));
-		res.setDateStar(dateStar.toString());
+		CalculateDateNineStar date = new CalculateDateNineStar();
+		Map<String, Integer> dateMap = null;
+		try {
+			dateMap = date.getDateStar();
+		} catch (Exception e) {
+			logger.log(e.getMessage());
+		}
+		logger.log("After getDateStar");
+		logger.log("ymdhms=" + ymdhms);
+		logger.log("map=" + dateMap == null || dateMap.isEmpty() ? "map is empty" : "map size =" + dateMap.size());
+		for(String key : dateMap.keySet()) {
+			logger.log("key=" + key);
+			logger.log("value=" + dateMap.get(key));
+		}
+		Integer dateStar = dateMap.get(year+monthT+dateT);
+		res.setDateStar(String.valueOf(dateStar));
 		res.setDateStarName(getStarName(dateStar));
 
 		res.setBirthYearStar("1");
@@ -54,13 +75,6 @@ public class NinesLogic extends AbstractCommonNineStar {
 		res.setTimeStar("9");
 		res.setTimeStarName(Constant.NAME_KYUSHI_KASEI);
 
-
-
-//		Logger logger = Logger.getRootLogger();
-//		logger.info("aaaaaaaaaaaaaaaa");
-
 		return res;
 	}
-
-
 }
