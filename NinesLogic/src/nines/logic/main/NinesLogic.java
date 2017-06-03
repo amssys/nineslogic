@@ -36,13 +36,13 @@ public class NinesLogic extends AbstractCommonNineStar {
 
 
 		// TODO 暫定的に現在の年の状態をmapにセット
-		Map<Integer, String> map = new HashMap<Integer, String>();
-		map.put(Integer.valueOf(res.getYearStar()), res.getYearStarName());
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		map.put(Integer.valueOf(res.getYearStar()), Integer.valueOf(res.getYearStarName()));
 
 		// 日家九星を取得
 		CalculateDateNineStar dateStar = new CalculateDateNineStar();
 		map = dateStar.getDateStar(map, ymdhms);
-		res.setDateStar(map.get(Integer.valueOf(year+monthT+dateT)));
+		res.setDateStar(map.get(Integer.valueOf(year+monthT+dateT)).toString());
 
 //		Logger logger = Logger.getRootLogger();
 //		logger.info("aaaaaaaaaaaaaaaa");

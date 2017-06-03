@@ -21,7 +21,7 @@ public class CalculateDateNineStar {
 	 * @param date
 	 * @return
 	 */
-	public Map<Integer, String> getDateStar(Map<Integer, String> map, String date) {
+	public Map<Integer, Integer> getDateStar(Map<Integer, Integer> map, String date) {
 		// 基準となる日付（甲子・一白水星）//TODO:一般的に求める
 //		final Calendar baseCal = parseStrToCal("2009/01/19 00:00:00");
 		final Calendar baseCal = parseStrToCal("2016/12/08 00:00:00");
@@ -41,60 +41,60 @@ public class CalculateDateNineStar {
 			while (baseCal.before(endDateCal)) {
 
 				if (isInYangTerm(baseCal, yangStartDateList, yinStartDateList)) {
-					map.put(getCalInteger(baseCal), Constant.NAME_IPPAKU_SUISEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_IPPAKU_SUISEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.IPPAKU_SUISEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_JIKOKU_DOSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_JIKOKU_DOSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.JIKOKU_DOSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_SAMPEKI_MOKUSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_SAMPEKI_MOKUSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.SAMPEKI_MOKUSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_SHIROKU_MOKUSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_SHIROKU_MOKUSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.SHIROKU_MOKUSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_GOU_DOSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_GOU_DOSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.GOU_DOSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_ROPPAKU_KINSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_ROPPAKU_KINSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.ROPPAKU_KINSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_SHICHISEKI_KINSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_SHICHISEKI_KINSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.SHICHISEKI_KINSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_HAPPAKU_DOSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_HAPPAKU_DOSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.HAPPAKU_DOSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_KYUSHI_KASEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_KYUSHI_KASEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.KYUSHI_KASEI);
 					baseCal.add(Calendar.DATE, nextDate);
 				}
 				else {
-					map.put(getCalInteger(baseCal), Constant.NAME_KYUSHI_KASEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_KYUSHI_KASEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.KYUSHI_KASEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_HAPPAKU_DOSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_HAPPAKU_DOSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.HAPPAKU_DOSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_SHICHISEKI_KINSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_SHICHISEKI_KINSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.SHICHISEKI_KINSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_ROPPAKU_KINSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_ROPPAKU_KINSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.ROPPAKU_KINSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_GOU_DOSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_GOU_DOSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.GOU_DOSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_SHIROKU_MOKUSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_SHIROKU_MOKUSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.SHIROKU_MOKUSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_SAMPEKI_MOKUSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_SAMPEKI_MOKUSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.SAMPEKI_MOKUSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_JIKOKU_DOSEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_JIKOKU_DOSEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.JIKOKU_DOSEI);
 					baseCal.add(Calendar.DATE, nextDate);
-					map.put(getCalInteger(baseCal), Constant.NAME_IPPAKU_SUISEI);
+					map.put(getCalInteger(baseCal), Constant.NUM_IPPAKU_SUISEI);
 //					System.out.println(getCalInteger(baseCal) + " " + Constant.IPPAKU_SUISEI);
 					baseCal.add(Calendar.DATE, nextDate);
 				}
