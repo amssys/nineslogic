@@ -3,6 +3,8 @@ package nines.logic.main;
 import java.util.HashMap;
 import java.util.Map;
 
+import nines.logic.util.Constant;
+
 /**
  * 九星のロジッククラス<BR>
  * @author Luv
@@ -37,12 +39,22 @@ public class NinesLogic extends AbstractCommonNineStar {
 
 		// TODO 暫定的に現在の年の状態をmapにセット
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		map.put(Integer.valueOf(res.getYearStar()), Integer.valueOf(res.getYearStarName()));
+		map.put(Integer.valueOf(res.getYearStar()), Integer.valueOf(res.getYearStar()));
 
 		// 日家九星を取得
-		CalculateDateNineStar dateStar = new CalculateDateNineStar();
-		map = dateStar.getDateStar(map, ymdhms);
-		res.setDateStar(map.get(Integer.valueOf(year+monthT+dateT)).toString());
+		CalculateDateNineStar clacStar = new CalculateDateNineStar();
+		map = clacStar.getDateStar(map, ymdhms);
+
+		Integer dateStar = Integer.valueOf(map.get(Integer.valueOf(year+monthT+dateT)));
+		res.setDateStar(dateStar.toString());
+		res.setDateStarName(getStarName(dateStar));
+
+		res.setBirthYearStar("1");
+		res.setBirthYearStarName(Constant.NAME_IPPAKU_SUISEI);
+		res.setTimeStar("9");
+		res.setTimeStarName(Constant.NAME_KYUSHI_KASEI);
+
+
 
 //		Logger logger = Logger.getRootLogger();
 //		logger.info("aaaaaaaaaaaaaaaa");
