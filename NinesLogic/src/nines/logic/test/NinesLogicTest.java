@@ -18,10 +18,10 @@ public class NinesLogicTest {
 	@Test
 	public void testNinesLogic1() {
 		NinesRequest req = new NinesRequest();
-		req.setYmdhms("2017/06/09 18:30:00");
+		req.setYmdhms("2000/06/09 18:30:00");
 		NinesLogic logic = new NinesLogic();
 		NinesResponse res = logic.createDivine(req);
-		assertEquals(Constant.IPPAKU_SUISEI, res.getYearStar());
+		assertEquals(Constant.NAME_IPPAKU_SUISEI, res.getYearStar());
 //		assertEquals("1", res.getYearStar());
 //		assertEquals("4", res.getMonthStar());
 //		assertEquals("7", res.getDateStar());

@@ -6,6 +6,10 @@ package nines.logic.main;
  */
 public class NinesRequest {
 
+
+	/** うんこ */
+	private String aaaa;
+
 	/** 誕生年 */
 	private String birthYear;
 	/** 占い日時 */
