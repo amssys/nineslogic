@@ -157,18 +157,18 @@ public class Constant {
 
 		public MonthStarGr3() {
 			monthStarGr3 = new EnumMap<Month, Integer>(Month.class);
-			monthStarGr3.put(Month.JANUARY, NUM_ROPPAKU_KINSEI);
-			monthStarGr3.put(Month.FEBRUARY, NUM_HAPPAKU_DOSEI);
-			monthStarGr3.put(Month.MARCH, NUM_SHICHISEKI_KINSEI);
-			monthStarGr3.put(Month.APRIL, NUM_ROPPAKU_KINSEI);
-			monthStarGr3.put(Month.MAY, NUM_GOU_DOSEI);
-			monthStarGr3.put(Month.JUNE, NUM_SHIROKU_MOKUSEI);
-			monthStarGr3.put(Month.JULY, NUM_SAMPEKI_MOKUSEI);
-			monthStarGr3.put(Month.AUGUST, NUM_JIKOKU_DOSEI);
-			monthStarGr3.put(Month.SEPTEMBER, NUM_IPPAKU_SUISEI);
-			monthStarGr3.put(Month.OCTOBER, NUM_KYUSHI_KASEI);
-			monthStarGr3.put(Month.NOVEMBER, NUM_HAPPAKU_DOSEI);
-			monthStarGr3.put(Month.DECEMBER, NUM_SHICHISEKI_KINSEI);
+			monthStarGr3.put(Month.JANUARY, NUM_KYUSHI_KASEI);
+			monthStarGr3.put(Month.FEBRUARY, NUM_JIKOKU_DOSEI);
+			monthStarGr3.put(Month.MARCH, NUM_IPPAKU_SUISEI);
+			monthStarGr3.put(Month.APRIL, NUM_KYUSHI_KASEI);
+			monthStarGr3.put(Month.MAY, NUM_HAPPAKU_DOSEI);
+			monthStarGr3.put(Month.JUNE, NUM_SHICHISEKI_KINSEI);
+			monthStarGr3.put(Month.JULY, NUM_ROPPAKU_KINSEI);
+			monthStarGr3.put(Month.AUGUST, NUM_GOU_DOSEI);
+			monthStarGr3.put(Month.SEPTEMBER, NUM_SHIROKU_MOKUSEI);
+			monthStarGr3.put(Month.OCTOBER, NUM_SAMPEKI_MOKUSEI);
+			monthStarGr3.put(Month.NOVEMBER, NUM_JIKOKU_DOSEI);
+			monthStarGr3.put(Month.DECEMBER, NUM_IPPAKU_SUISEI);
 		}
 
 
