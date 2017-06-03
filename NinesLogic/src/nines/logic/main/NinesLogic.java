@@ -3,8 +3,6 @@ package nines.logic.main;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
-
 import nines.logic.util.Constant;
 
 /**
@@ -13,14 +11,6 @@ import nines.logic.util.Constant;
  */
 public class NinesLogic extends AbstractCommonNineStar {
 
-	private LambdaLogger logger;
-	/**
-	 * コンストラクタ<BR>
-	 * @param logger
-	 */
-	public NinesLogic(LambdaLogger logger) {
-		this.logger = logger;
-	}
 	public NinesResponse createDivine(NinesRequest req) {
 
 		final String ymdhms = req.getYmdhms();
@@ -57,14 +47,8 @@ public class NinesLogic extends AbstractCommonNineStar {
 		try {
 			dateMap = date.getDateStar();
 		} catch (Exception e) {
-			logger.log(e.getMessage());
-		}
-		logger.log("After getDateStar");
-		logger.log("ymdhms=" + ymdhms);
-		logger.log("map=" + dateMap == null || dateMap.isEmpty() ? "map is empty" : "map size =" + dateMap.size());
-		for(String key : dateMap.keySet()) {
-			logger.log("key=" + key);
-			logger.log("value=" + dateMap.get(key));
+			// TODO 例外処理後日対応
+			e.printStackTrace();
 		}
 		Integer dateStar = dateMap.get(year+monthT+dateT);
 		res.setDateStar(String.valueOf(dateStar));
