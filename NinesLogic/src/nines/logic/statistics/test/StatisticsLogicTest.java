@@ -34,7 +34,26 @@ public class StatisticsLogicTest {
 		// 日の九星
 		assertEquals("1", res.getDateStar());
 	}
-	
+
+	/**
+	 * 騎手の生命数、年、月、日の九星を求めるロジックのテスト<BR>
+	 */
+	@Test
+	public void testPlayerNines02() {
+		StatisticsPlayerRequest req = new StatisticsPlayerRequest();
+		req.setBirthday("1986/08/20");
+		StatisticsLogic logic = new StatisticsLogic();
+		StatisticsPlayerResponse res = logic.getPlayerNines(req);
+		// 生命数
+		assertEquals("6", res.getLifeNumber());
+		// 年の九星
+		assertEquals("5", res.getYearStar());
+		// 月の九星
+		assertEquals("5", res.getMonthStar());
+		// 日の九星
+		assertEquals("4", res.getDateStar());
+	}
+
 	/**
 	 * レース時間における九星を求めるロジックのテスト<BR>
 	 */
