@@ -9,13 +9,16 @@ import java.util.List;
 import java.util.Map;
 
 import nines.logic.util.Constant;
+import nines.logic.util.SixtyZodiac;
+import nines.logic.util.TwentyFourSection;
 
 /**
  * 日家九星を計算するクラス<BR>
  */
-public class CalculateDateNineStar {
+public class CalculateDateNineStar extends AbstractCommonNineStar {
 	final String strBaseDate = "2016/12/08 00:00:00";
 	final String strEndDate = "2020/05/20 00:00:00";
+	final int ninesDateCycle = 500;
 
 	/**
 	 * 日家九星を取得します。
@@ -149,4 +152,51 @@ public class CalculateDateNineStar {
 
 		return ret;
 	}
+
+	/**
+	 * 二十四節気の日付を求めます。
+	 */
+	private Date getSectionDate(Date date, TwentyFourSection sec) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		int year = cal.get(Calendar.YEAR);
+
+		int day = (int) (sec.getDateCorrection() + (sec.getTimeCorrection() * (double)(year - 1900)))
+				- (int) ((year - 1900) / 4);
+
+		cal.set(Calendar.DATE, day);
+
+		return cal.getTime();
+	}
+
+/*
+	public void calcDateStar() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+
+		List<NinesDate> dateList = new ArrayList<NinesDate>();
+
+		for (int i = 0; i < ninesDateCycle; i++) {
+			if (dateList.size() == 0) {
+				// 初期設定
+				NinesDate date = new NinesDate();
+				try {
+					date.setDate(sdf.parse(strBaseDate));
+
+				} catch (Exception e) {
+					//parse error
+				}
+				date.setNines(Constant.NUM_IPPAKU_SUISEI);
+				date.setSixtyZodiac(SixtyZodiac.KINOE_NE);
+				dateList.add(date);
+			}
+			else {
+				NinesDate date = new NinesDate();
+				date = dateList.get(i - 1).getNextDate();
+//				System.out.println("日付:" + date.getDate().toString() + " 日家九星:" + getStarName(date.getNines()));
+				System.out.println("日付:" + sdf.format(date.getDate()) + " 六十干支:" + date.getSixtyZodiac().getOrder());
+				dateList.add(date);
+			}
+		}
+
+	}*/
 }
