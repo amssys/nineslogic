@@ -15,19 +15,23 @@ public class NinesLogic extends AbstractCommonNineStar {
 
 		// 占い日付
 		final String fortuneDate = req.getYmdhms();
-		String fortuneYear = fortuneDate.substring(0, 4);
-		String fortuneMonth = fortuneDate.substring(5, 7);
+		// 年
+		String fortuneYear = fortuneDate.substring(0, fortuneDate.indexOf("/"));
+		// 月
+		String fortuneMonth = fortuneDate.substring(fortuneDate.indexOf("/") +1, fortuneDate.indexOf("/") +3);
+		// 日
+		String fortuneDay = fortuneDate.substring(fortuneDate.lastIndexOf("/") +1, fortuneDate.lastIndexOf("/") +3);
 
 		String fortuneMonthT = fortuneDate.substring(5, 7);
 		String fortuneDateT = fortuneDate.substring(8, 10);
 
 		// 年家九星を取得
 		CalculateYearNineStar clacYear = new CalculateYearNineStar();
-		Integer fortuneYearStar = clacYear.getYearStar(fortuneYear);
+		Integer fortuneYearStar = clacYear.getYearStar(fortuneYear, fortuneMonth, fortuneDay);
 
 		// 月家九星を取得
 		CalculateMonthNineStar clacMonth = new CalculateMonthNineStar();
-		Integer fortuneMonthStar = clacMonth.getMonthStar(fortuneYearStar, fortuneMonth);
+		Integer fortuneMonthStar = clacMonth.getMonthStar(fortuneYear, fortuneMonth, fortuneDay, fortuneYearStar);
 
 		NinesResponse res = new NinesResponse();
 		// 年をセット
@@ -57,8 +61,14 @@ public class NinesLogic extends AbstractCommonNineStar {
 
 		// 生年月日
 		final String birthday = req.getBirthYear();
-		String birthYear = birthday.substring(0, 4);
-		Integer birthYearStar = clacYear.getYearStar(birthYear);
+		// 年
+		String birthYear = birthday.substring(0, birthday.indexOf("/"));
+		// 月
+		String birthMonth = birthday.substring(birthday.indexOf("/") +1, birthday.indexOf("/") +3);
+		// 日
+		String birthDay = birthday.substring(birthday.lastIndexOf("/") +1, birthday.lastIndexOf("/") +3);
+		// 誕生年の九星取得
+		Integer birthYearStar = clacYear.getYearStar(birthYear, birthMonth, birthDay);
 
 		// 誕生年をセット
 		res.setBirthYearStar(birthYearStar.toString());

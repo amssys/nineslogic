@@ -1,5 +1,6 @@
 package nines.logic.util;
 
+import java.time.Month;
 import java.util.EnumMap;
 
 /**
@@ -50,36 +51,8 @@ public class Constant {
 	/** 11 */
 	public static final int NUM_ELEVEN 				= 11;
 
-
 	/** 基準年 */
-	public static final int BASE_YAER = 1909;
-
-	/** 月 */
-	public static enum Month {
-		JANUARY(1)
-		, FEBRUARY(2)
-		, MARCH(3)
-		, APRIL(4)
-		, MAY(5)
-		, JUNE(6)
-		, JULY(7)
-		, AUGUST(8)
-		, SEPTEMBER(9)
-		, OCTOBER(10)
-		, NOVEMBER(11)
-		, DECEMBER(12);
-
-
-		private final int month;
-
-		private Month(final int month) {
-			this.month = month;
-		}
-
-		public int getInt() {
-			return this.month;
-		}
-	}
+	public static final int BASE_YAER_1900 = 1900;
 
 
 	/**
