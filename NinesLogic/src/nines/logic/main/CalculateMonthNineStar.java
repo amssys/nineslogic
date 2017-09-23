@@ -26,19 +26,19 @@ public class CalculateMonthNineStar extends AbstractCommonCalculate {
 		case Constant.NUM_IPPAKU_SUISEI:
 		case Constant.NUM_SHIROKU_MOKUSEI:
 		case Constant.NUM_SHICHISEKI_KINSEI:
-			Constant.MonthStarGr1 mapGr1 = new Constant().new MonthStarGr1();
+			Constant.MonthNineStarGr1 mapGr1 = new Constant().new MonthNineStarGr1();
 			return mapGr1.get(month);
 
 		case Constant.NUM_SAMPEKI_MOKUSEI:
 		case Constant.NUM_ROPPAKU_KINSEI:
 		case Constant.NUM_KYUSHI_KASEI:
-			Constant.MonthStarGr2 mapGr2 = new Constant().new MonthStarGr2();
+			Constant.MonthNineStarGr2 mapGr2 = new Constant().new MonthNineStarGr2();
 			return mapGr2.get(month);
 
 		case Constant.NUM_JIKOKU_DOSEI:
 		case Constant.NUM_GOU_DOSEI:
 		case Constant.NUM_HAPPAKU_DOSEI:
-			Constant.MonthStarGr3 mapGr3 = new Constant().new MonthStarGr3();
+			Constant.MonthNineStarGr3 mapGr3 = new Constant().new MonthNineStarGr3();
 			return mapGr3.get(month);
 
 		default:
