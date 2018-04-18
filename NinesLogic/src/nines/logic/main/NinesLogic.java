@@ -79,7 +79,6 @@ public class NinesLogic extends AbstractCommonNineStar {
 		// 誕生年をセット
 		res.setBirthYearStar(birthYearStar.toString());
 		res.setBirthYearStarName(getStarName(birthYearStar));
-
 		return res;
 	}
 }
